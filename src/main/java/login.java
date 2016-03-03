@@ -50,10 +50,10 @@ public class login extends HttpServlet {
             String pword;
             while((user = reader.readLine()) != null && (pword = reader.readLine()) != null) {
                if((username.equals(user) && password.equals(pword))) { 
-                 request.getSession().setAttribute("username",username); 
-                 response.sendRedirect("Home.jsp"); 
-               }
-               else response.sendRedirect("Error.jsp");
+                request.getSession().setAttribute("username",username); 
+                response.sendRedirect("Home.jsp"); 
+              }}
+              response.sendRedirect("Error.jsp");
             out.println("</body>");
             out.println("</html>");
 
