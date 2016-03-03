@@ -43,19 +43,11 @@ public class login extends HttpServlet {
             out.println("<body>");
             String username=request.getParameter("username"); 
             String password=request.getParameter("password"); 
-            String fileName = request.getContextPath() + "data.txt";
-            BufferedReader reader = new BufferedReader(new FileReader(fileName));
-            StringBuilder sb = new StringBuilder();
-            String user;
-            String pword;
-            out.println(reader.readLine());
-            while((user = reader.readLine()) != null && (pword = reader.readLine()) != null) {
-                out.println(user);
-               if((username.equals(user) && password.equals(pword))) { 
-                request.getSession().setAttribute("username",username); 
-                response.sendRedirect("Home.jsp"); 
-              }}
-              response.sendRedirect("Error.jsp");
+            if((username.equals("david") && password.equals("password"))) { 
+              request.getSession().setAttribute("username",username); 
+              response.sendRedirect("Home.jsp"); 
+            }
+            else response.sendRedirect("Error.jsp");
             out.println("</body>");
             out.println("</html>");
 
