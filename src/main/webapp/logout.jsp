@@ -14,7 +14,8 @@
     <body> 
         <% session.removeAttribute("username"); 
            session.removeAttribute("password"); 
-           session.invalidate(); %> 
+           session.invalidate();
+           response.sendRedirect("index.html");%> 
         <h1>Logout was done successfully.</h1> 
     </body> 
 </html>
