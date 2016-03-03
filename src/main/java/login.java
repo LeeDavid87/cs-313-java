@@ -44,7 +44,7 @@ public class login extends HttpServlet {
             String username=request.getParameter("username"); 
             String password=request.getParameter("password"); 
             String fileName = "data.txt";
-           BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
            StringBuilder sb = new StringBuilder();
            String user;
            String pword;
