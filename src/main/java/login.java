@@ -49,7 +49,7 @@ public class login extends HttpServlet {
            String user;
            String pword;
            while((user = reader.readLine()) != null && (pword = reader.readLine()) != null) {
-              if((username.equals("david") && password.equals("password"))) { 
+              if((username.equals(user) && password.equals(pword))) { 
                 request.getSession().setAttribute("username",username); 
                 response.sendRedirect("Home.jsp"); 
               }
