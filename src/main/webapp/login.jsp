@@ -21,7 +21,7 @@
         <% String username=request.getParameter("username"); 
            String password=request.getParameter("password"); 
            String app_path = request.getContextPath();
-           out.println(getServletContext().getRealPath("Home.jsp"));
+           out.println(getServletContext().getRealPath(""));
            String fileName = "src/main/webapp/data.txt";
            /*BufferedReader reader = new BufferedReader(new FileReader(fileName));
            StringBuilder sb = new StringBuilder();
