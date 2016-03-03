@@ -23,7 +23,7 @@
            String app_path = request.getContextPath();
 
            String fileName="/data.txt";
-           BufferedReader reader = new BufferedReader(new FileReader(app_path + fileName));
+           BufferedReader reader = new BufferedReader(new FileReader(fileName));
            StringBuilder sb = new StringBuilder();
            String user;
            String pword;
