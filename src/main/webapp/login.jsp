@@ -22,7 +22,7 @@
            String password=request.getParameter("password"); 
            String app_path = request.getContextPath();
 
-           String fileName="data.txt";
+           String fileName="/data.txt";
            BufferedReader reader = new BufferedReader(new FileReader(app_path + fileName));
            StringBuilder sb = new StringBuilder();
            String user;
