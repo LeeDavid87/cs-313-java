@@ -48,6 +48,7 @@ public class login extends HttpServlet {
             StringBuilder sb = new StringBuilder();
             String user;
             String pword;
+            out.println(reader.readLine());
             while((user = reader.readLine()) != null && (pword = reader.readLine()) != null) {
                 out.println(user);
                if((username.equals(user) && password.equals(pword))) { 
