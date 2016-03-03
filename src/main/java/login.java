@@ -43,8 +43,7 @@ public class login extends HttpServlet {
             String password=request.getParameter("password"); 
               if((username.equals("david") && password.equals("password"))) { 
                 request.getSession().setAttribute("username",username); 
-                //response.sendRedirect("Home.jsp"); 
-                out.println("it worked");
+                response.sendRedirect("Home.jsp"); 
               }
               else response.sendRedirect("Error.jsp");
             out.println("</body>");
