@@ -47,8 +47,8 @@ public class createPost extends HttpServlet {
             String postText = request.getParameter("post");
             out.println("<p>"+postText+"</p>");
             File file = new File(getServletContext().getRealPath("/posts.txt"));
-            FileWriter write = new FileWriter(file, true);
-            PrintWriter line = new PrintWriter(write);
+            FileWriter writer = new FileWriter(file, true);
+            PrintWriter line = new PrintWriter(writer);
             line.printf("%s" + "%n", postText);
             //FileWriter writer = new FileWriter(file);
             //writer.write(postText);
@@ -58,7 +58,7 @@ public class createPost extends HttpServlet {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String temp = bufferedReader.readLine();
             out.println(temp);
-            postWrite.write("test");
+            //postWrite.write("test");
             out.close();
             out.println("</body>");
             out.println("</html>");
