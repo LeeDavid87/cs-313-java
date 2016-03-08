@@ -11,6 +11,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.sql.Timestamp;
+import java.util.Calendar;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,8 +46,11 @@ public class createPost extends HttpServlet {
             out.println("<title>Create Post</title>");            
             out.println("</head>");
             out.println("<body>");
+            String username = request.getParameter("username"); 
+            Calendar calendar = Calendar.getInstance();
+            Timestamp time = new java.sql.Timestamp(calendar.getTime().getTime());
             String postText = request.getParameter("post");     
-            String htmlText = "</br>" + postText + "</br>";
+            String htmlText = "</br>User: " + username + "</br>Time: " + time + "</br>" + postText + "</br>";
             // Opens the file
             File file = new File("posts.txt");
             
@@ -57,7 +62,7 @@ public class createPost extends HttpServlet {
             
             // Prepares to write to file
             BufferedWriter postWrite = new BufferedWriter(new FileWriter("posts.txt", false));
-            postWrite.write(htmlText + temp);
+            postWrite.write("");
             postWrite.close();
             
             response.sendRedirect("displayPosts");
