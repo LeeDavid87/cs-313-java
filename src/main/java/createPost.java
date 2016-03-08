@@ -51,14 +51,14 @@ public class createPost extends HttpServlet {
             //FileWriter writer = new FileWriter(file, true);
             //writer.write(postText);
             //writer.close();
-            BufferedWriter postWrite = new BufferedWriter(new FileWriter(file, true));
-            postWrite.write(postText);
-            postWrite.close();
-            FileReader fileReader = new FileReader(file);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String temp = bufferedReader.readLine();
-            fileReader.close();
-            out.println(temp);
+            //BufferedWriter postWrite = new BufferedWriter(new FileWriter(file, true));
+            //postWrite.write(postText);
+            //postWrite.close();
+            //FileReader fileReader = new FileReader(file);
+            //BufferedReader bufferedReader = new BufferedReader(fileReader);
+            //String temp = bufferedReader.readLine();
+            //fileReader.close();
+            //out.println(temp);
             
             out.close();
             out.println("</body>");
