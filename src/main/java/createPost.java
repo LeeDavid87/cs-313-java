@@ -46,11 +46,11 @@ public class createPost extends HttpServlet {
             out.println("<title>Create Post</title>");            
             out.println("</head>");
             out.println("<body>");
-            String username = request.getParameter("username"); 
+            String user = request.getSession().getAttribute("username",username); 
             Calendar calendar = Calendar.getInstance();
             Timestamp time = new java.sql.Timestamp(calendar.getTime().getTime());
             String postText = request.getParameter("post");     
-            String htmlText = "</br>User: " + username + "</br>Time: " + time + "</br>" + postText + "</br>";
+            String htmlText = "</br>User: " + user + "</br>Time: " + time + "</br>" + postText + "</br>";
             // Opens the file
             File file = new File("posts.txt");
             
