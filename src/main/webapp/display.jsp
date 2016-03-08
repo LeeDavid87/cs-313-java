@@ -15,6 +15,6 @@
         <h1>Posts Page!!</h1>
         <div> ${posts} </div>
         
-       <a href=\"Home.jsp\">Create another post</a>
+       <a href="Home.jsp">Create another post</a>
     </body>
 </html>
