@@ -18,6 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -46,7 +47,7 @@ public class createPost extends HttpServlet {
             out.println("<title>Create Post</title>");            
             out.println("</head>");
             out.println("<body>");
-            String user = request.getSession().getAttribute("username",username); 
+            String user = (String)request.getSession().getAttribute("username");
             Calendar calendar = Calendar.getInstance();
             Timestamp time = new java.sql.Timestamp(calendar.getTime().getTime());
             String postText = request.getParameter("post");     
