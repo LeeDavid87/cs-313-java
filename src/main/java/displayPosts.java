@@ -54,7 +54,7 @@ public class displayPosts extends HttpServlet {
                 bufferedReader.close(); // Closes reader
             }
             out.println("</div");
-            out.println("<a href=\"Home.jsp\">Create another post</a>");
+            out.println("<a href='Home.jsp'>Create another post</a>");
             out.println("</body>");
             out.println("</html>");
         }
