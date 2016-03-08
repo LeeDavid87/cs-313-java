@@ -14,7 +14,7 @@
     <body> 
     <br/><br/><br/><br/><br/> 
     <center> 
-        <h2> <% String a=session.getAttribute("username").toString(); out.println("Hello "+a); %> </h2> 
+        <h2> Hello ${username} </h2> 
         <br/> <br/> <br/><br/><br/><br/><br/> 
         <a href="logout">Logout</a> 
     </center> 
