@@ -7,6 +7,8 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.BufferedWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.File;
 import java.io.FileWriter;
 import javax.servlet.ServletException;
@@ -44,12 +46,15 @@ public class createPost extends HttpServlet {
             out.println("<body>");
             String postText = request.getParameter("post");
             out.println("<p>"+postText+"</p>");
-            File file = new File("/var/lib/openshift/56cd28da89f5cfb1fb000127/jbossews/posts.txt");
+            File file = new File(getServletContext().getRealPath("/posts.txt"));
             FileWriter writer = new FileWriter(file);
             writer.write(postText);
             BufferedWriter postWrite = new BufferedWriter(new FileWriter(file)); 
-            out.println(file.getAbsolutePath());
             postWrite.write("test");
+            FileReader fileReader = new FileReader(file);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String temp = bufferedReader.readLine();
+            out.println(temp);
             out.close();
             out.println("</body>");
             out.println("</html>");
