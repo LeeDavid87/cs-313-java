@@ -15,6 +15,10 @@
     <br/><br/><br/><br/><br/> 
     <center> 
         <h2> Hello ${username} </h2> 
+        <form action="createPost" method="post">
+          <br/>Enter your post:<input type="textarea" name="post"> 
+          <br/><input type="submit" value="Submit"> 
+        </form>
         <br/> <br/> <br/><br/><br/><br/><br/> 
         <a href="logout">Logout</a> 
     </center> 

@@ -36,10 +36,11 @@ public class createPost extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet createPost</title>");            
+            out.println("<title>Create Post</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet createPost at " + request.getContextPath() + "</h1>");
+            String postText = request.getParameter("post");
+            out.println("<p>"+postText+"</p>");
             out.println("</body>");
             out.println("</html>");
         }
