@@ -16,7 +16,7 @@
     <center> 
         <h2> Hello ${username} </h2> 
         <form action="createPost" method="post">
-          <br/>Enter your post:<input type="textarea" name="post"> 
+          <br/>Enter your post:<input rows="4" cols="50" type="textarea" name="post"> 
           <br/><input type="submit" value="Submit"> 
         </form>
         <br/> <br/> <br/><br/><br/><br/><br/> 

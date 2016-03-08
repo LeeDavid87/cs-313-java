@@ -6,6 +6,9 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Tim
+ * @author David
  */
 @WebServlet(urlPatterns = {"/createPost"})
 public class createPost extends HttpServlet {
@@ -41,6 +44,10 @@ public class createPost extends HttpServlet {
             out.println("<body>");
             String postText = request.getParameter("post");
             out.println("<p>"+postText+"</p>");
+            File file = new File ("posts.txt");
+            BufferedWriter postWrite = new BufferedWriter(new FileWriter(file)); 
+            out.write(postText);
+            out.close();
             out.println("</body>");
             out.println("</html>");
         }
