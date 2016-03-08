@@ -42,19 +42,16 @@ public class displayPosts extends HttpServlet {
             out.println("<title>Servlet displayPosts</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Posts Page</h1>");
             // Opens the file
             File file = new File("posts.txt");
-            out.println("<div>");
             try ( // Reads in the text
                 FileReader fileReader = new FileReader(file)) {
                 BufferedReader bufferedReader = new BufferedReader(fileReader);
                 String temp = bufferedReader.readLine();
-                out.println(temp);
+                request.getSession().setAttribute("posts",temp);
                 bufferedReader.close(); // Closes reader
             }
-            out.println("</div");
-            out.println("<a href=\"" + "Home.jsp" + "\">Create another post</a>");
+            response.sendRedirect("display.jsp");
             out.println("</body>");
             out.println("</html>");
         }
