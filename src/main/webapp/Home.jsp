@@ -21,6 +21,7 @@
         </form>
         <br/> <br/> <br/><br/><br/><br/><br/> 
         <a href="logout">Logout</a> 
+        <a href="displayPosts">Show Posts</a> 
     </center> 
 </body> 
 </html>

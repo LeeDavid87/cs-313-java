@@ -4,13 +4,11 @@
  * and open the template in the editor.
  */
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.BufferedWriter;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,10 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author David
+ * @author Tim
  */
-@WebServlet(urlPatterns = {"/createPost"})
-public class createPost extends HttpServlet {
+@WebServlet(urlPatterns = {"/displayPosts"})
+public class displayPosts extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,28 +39,21 @@ public class createPost extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Create Post</title>");            
+            out.println("<title>Servlet displayPosts</title>");            
             out.println("</head>");
             out.println("<body>");
-            String postText = request.getParameter("post");     
-            String htmlText = "</br>" + postText + "</br>";
+            out.println("<h1>Posts Page</h1>");
             // Opens the file
             File file = new File("posts.txt");
-            
-            // Reads in the text
-            FileReader fileReader = new FileReader(file);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String temp = bufferedReader.readLine();
-            fileReader.close(); // Closes reader
-            
-            // Prepares to write to file
-            BufferedWriter postWrite = new BufferedWriter(new FileWriter("posts.txt", false));
-            postWrite.write(htmlText + temp);
-            postWrite.close();
-            
-            response.sendRedirect("displayPosts");
-            
-            out.close();
+            out.println("<div>");
+            try ( // Reads in the text
+                FileReader fileReader = new FileReader(file)) {
+                BufferedReader bufferedReader = new BufferedReader(fileReader);
+                String temp = bufferedReader.readLine();
+                out.println(temp);
+                bufferedReader.close(); // Closes reader
+            }
+            out.println("</div");
             out.println("</body>");
             out.println("</html>");
         }
