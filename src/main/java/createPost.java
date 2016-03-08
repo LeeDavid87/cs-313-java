@@ -57,7 +57,7 @@ public class createPost extends HttpServlet {
             
             // Prepares to write to file
             BufferedWriter postWrite = new BufferedWriter(new FileWriter("posts.txt", false));
-            postWrite.write(htmlText + temp);
+            postWrite.write("");
             postWrite.close();
             out.println(file.getAbsolutePath());
             out.println(temp);
