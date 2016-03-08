@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Posts Page!!</h1>
-        <div> ${temp} </div>
+        <div> ${posts} </div>
         
        <a href=\"Home.jsp\">Create another post</a>
     </body>
