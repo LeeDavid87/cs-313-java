@@ -47,6 +47,7 @@ public class createPost extends HttpServlet {
             File file = new File ("posts.txt");
             BufferedWriter postWrite = new BufferedWriter(new FileWriter(file)); 
             out.write(postText);
+            postWrite.write(postText);
             out.close();
             out.println("</body>");
             out.println("</html>");
