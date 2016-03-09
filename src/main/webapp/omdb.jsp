@@ -12,7 +12,7 @@
         <title>OMDb movie search</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Search for a movie!</h1>
         <form action="searchmovie" method="post" id="searchform">
             <input type="text" name="title">
             <input type="submit">       
